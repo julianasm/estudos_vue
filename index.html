@@ -10,12 +10,19 @@
                 height: 200px;
                 width: 200px;
             }
+            [v-cloak] {
+                display: none;
+            }
         </style>
     </head>
     <bod>
-        <div id="app">
+        <div id="app" v-cloak>
          {{ greeting }}
          <input v-model="greeting">
+
+         <hr />
+
+         <button v-on:click="isVisible = !isVisible">Show Box</button>
 
          <div v-if="isVisible" class="box"></div>
         </div>
