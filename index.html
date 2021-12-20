@@ -4,10 +4,20 @@
         <title>
             Vue 3 basics
         </title>
+        <style>
+            .box {
+                background-color: purple;
+                height: 200px;
+                width: 200px;
+            }
+        </style>
     </head>
     <bod>
         <div id="app">
          {{ greeting }}
+         <input v-model="greeting">
+
+         <div v-if="isVisible" class="box"></div>
         </div>
 
         <script src="https://unpkg.com/vue@next"></script>
@@ -15,7 +25,8 @@
             let app = Vue.createApp({
                 data: function() {
                     return {
-                        greeting: 'Hello vue 3!'
+                        greeting: 'Hello vue 3!',
+                        isVisible: true
                     }
                 }
             })
